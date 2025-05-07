@@ -1,0 +1,37 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: My workflow One
+on:
+  push:
+    branches:
+      - "**"
+  workflow_dispatch:
+jobs:
+  build:
+    steps:
+      - name: Say hello
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "Hi 1"
+
+      - name: Say bye
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "Bye 1"
+
+  test:
+    steps:
+      - name: Display Python version
+        uses: docker://python:3.11-alpine
+        shell: sh
+        run: |
+          python --version
+
+      - name: Run test script
+        uses: docker://python:3.11-alpine
+        shell: sh
+        run: |
+          echo "Running tests..."
+          echo "All tests passed flow 1!"
