@@ -28,10 +28,3 @@ jobs:
         shell: sh
         run: |
           python --version
-
-      - name: Run test script
-        uses: docker://python:3.11-alpine
-        shell: sh
-        run: |
-          echo "Running tests..."
-          echo "All tests passed flow 1!"
