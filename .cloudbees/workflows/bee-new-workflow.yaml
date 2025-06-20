@@ -11,7 +11,7 @@ jobs:
   build:
     steps:
       - name: Say hello from advisor 85
-        uses: docker://public.ecr.aws/l7o7z1g8/services/workflow-advisor:0.0.85
+        uses: docker://public.ecr.aws/l7o7z1g8/services/workflow-advisor:0.0.855
         shell: sh
         run: |
           echo "hello world"
